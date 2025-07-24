@@ -1,0 +1,9 @@
+---
+applications:
+  - name: securityDemo-app
+    path: .
+    memory: 128M
+    buildpacks:
+      - nodejs_buildpack
+    services:
+      - security

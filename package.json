@@ -1,0 +1,49 @@
+{
+  "name": "security",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap/cds": "^9",
+    "express": "^4",
+    "@sap/xssec": "^4"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@cap-js/cds-types": "^0.13.0"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "uaa": {
+        "kind": "xsuaa"
+      },
+      "[production]": {
+        "auth": "xsuaa"
+      },
+      "auth": {
+        "[development]": {
+          "strategy": "mocked",
+          "users": {
+            "vishal": {
+              "attr": {
+                "password": "12345"
+              },
+              "roles": ["Viewer", "HRAdmin"]
+            },
+            "jahnavi": {
+              "roles": ["Viewer"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

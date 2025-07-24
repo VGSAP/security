@@ -1,0 +1,56 @@
+###
+GET http://localhost:4004/odata/v4/hr/Employees
+
+###
+GET http://localhost:4004/odata/v4/hr/Employees
+Authorization: Basic vishal:
+
+###
+POST http://localhost:4004/odata/v4/hr/Employees
+Content-Type: application/json
+
+{
+    "ID": "1a46bda7-2c04-49f4-b9f7-6f0d99973812",
+    "name": "Ganji Vishal",
+    "department": "Enterprise Systems",
+    "position": "Software Engineer"
+}
+
+###
+GET http://localhost:4004/odata/v4/hr/Salaries
+
+###
+GET http://localhost:4004/odata/v4/hr/Salaries
+Authorization: Basic jahnavi:
+
+###
+GET http://localhost:4004/odata/v4/hr/Salaries
+Authorization: Basic vishal:
+
+###
+POST http://localhost:4004/odata/v4/hr/Salaries
+Authorization: Basic jahnavi:
+Content-Type: application/json
+
+{
+    "ID": "1a46bda7-2c04-49f4-b9f7-6f0d99973812",
+    "employeeID":"c9e86690-3d9d-418a-bc4c-04b3cb0f589a",
+    "amount": 30000,
+    "currency": "Rupees",
+    "paidOn": "2025-06-27"
+}
+
+
+###
+POST http://localhost:4004/odata/v4/hr/Salaries
+Authorization: Basic vishal:
+Content-Type: application/json
+
+{
+    "ID": "1c46bda7-2c04-49f4-b9f7-6f0d99973812",
+    "employeeID":"c9e86690-3d9d-418a-bc4c-04b3cb0f589a",
+    "amount": 30000,
+    "currency": "Rupees",
+    "paidOn": "2025-06-27"
+}
+

@@ -1,0 +1,44 @@
+{
+  "xsappname":"securityDemo",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.Viewer",
+      "description": "Normal user"
+    },
+    {
+      "name": "$XSAPPNAME.HRAdmin",
+      "description": "HRAdmin able to see Salaries data"
+    }
+  ],
+  "attributes": [],
+  "role-templates": [
+    {
+      "name": "Viewer",
+      "description": "Able to read data",
+      "scope-references": ["$XSAPPNAME.Viewer"],
+      "attribute-references": []
+    },
+    {
+      "name": "HRAdmin",
+      "description": "HRAdmin able to see Salaries data",
+      "scope-references": ["$XSAPPNAME.HRAdmin"],
+      "attribute-references": []
+    }
+  ],
+  "authorities": [
+    "$ACCEPT_GRANTED_AUTHORITIES"
+  ],
+  "oauth2-configuration": {
+    "token-validity": 60,
+    "refresh-token-validity": 120,
+    "redirect-uris": [
+      "https://api.cf.us10-001.hana.ondemand.com",
+      "https://api.cf.us10-001.hana.ondemand.com/login/callback",
+      "https://securityDemo-app.cfapps.us10-001.hana.ondemand.com",
+      "https://securityDemo-app.cfapps.us10-001.hana.ondemand.com/login/callback",
+      "https://*.cfapps.us10-001.hana.ondemand.com/login/callback",
+      "https://*.cfapps.us10-001.hana.ondemand.com"
+    ],
+    "autoapprove": "false"
+  }
+}
