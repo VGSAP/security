@@ -1,4 +1,8 @@
 ###
+GET http://localhost:4004/odata/v4/hr/$metadata
+Authorization: Basic vishal:
+
+###
 GET http://localhost:4004/odata/v4/hr/Employees
 
 ###

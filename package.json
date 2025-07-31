@@ -1,8 +1,11 @@
 {
-  "name": "security",
+  "name": "securityDemo",
   "version": "1.0.0",
   "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
+  "repository": {
+    "type": "git",
+    "url": "<Add your repository here>"
+  },
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
@@ -36,14 +39,21 @@
               "attr": {
                 "password": "12345"
               },
-              "roles": ["Viewer", "HRAdmin"]
+              "roles": [
+                "Viewer",
+                "HRAdmin"
+              ]
             },
             "jahnavi": {
-              "roles": ["Viewer"]
+              "roles": [
+                "Viewer"
+              ]
             }
           }
         }
       }
     }
-  }
+  },
+  "main": "index.js",
+  "author": ""
 }

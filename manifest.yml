@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: securityDemo-app
+  - name: securityDemo
     path: .
     memory: 128M
     buildpacks:

@@ -1,6 +1,6 @@
 using { uniq as db } from '../db/schema';
-
-service HRService @(requires: 'authenticated-user')
+//@(requires: 'authenticated-user')
+service HRService 
 {
   @readonly entity Employees as projection on db.Employees;
 

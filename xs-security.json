@@ -2,12 +2,12 @@
   "xsappname":"securityDemo",
   "scopes": [
     {
-      "name": "$XSAPPNAME.Viewer",
-      "description": "Normal user"
+      "name": "$XSAPPNAME.Display",
+      "description": "Able to see data"
     },
     {
-      "name": "$XSAPPNAME.HRAdmin",
-      "description": "HRAdmin able to see Salaries data"
+      "name": "$XSAPPNAME.Edit",
+      "description": "Able to edit Salaries data"
     }
   ],
   "attributes": [],
@@ -15,29 +15,23 @@
     {
       "name": "Viewer",
       "description": "Able to read data",
-      "scope-references": ["$XSAPPNAME.Viewer"],
-      "attribute-references": []
+      "scope-references": ["$XSAPPNAME.Display"]
     },
     {
       "name": "HRAdmin",
-      "description": "HRAdmin able to see Salaries data",
-      "scope-references": ["$XSAPPNAME.HRAdmin"],
-      "attribute-references": []
+      "description": "HRAdmin able to edit Salaries data",
+      "scope-references": ["$XSAPPNAME.Edit"]
     }
   ],
   "authorities": [
     "$ACCEPT_GRANTED_AUTHORITIES"
   ],
   "oauth2-configuration": {
-    "token-validity": 60,
-    "refresh-token-validity": 120,
+    "token-validity": 900,
+    "refresh-token-validity": 1800,
     "redirect-uris": [
       "https://api.cf.us10-001.hana.ondemand.com",
-      "https://api.cf.us10-001.hana.ondemand.com/login/callback",
-      "https://securityDemo-app.cfapps.us10-001.hana.ondemand.com",
-      "https://securityDemo-app.cfapps.us10-001.hana.ondemand.com/login/callback",
-      "https://*.cfapps.us10-001.hana.ondemand.com/login/callback",
-      "https://*.cfapps.us10-001.hana.ondemand.com"
+      "https://securityDemo.cfapps.us10-001.hana.ondemand.com"
     ],
     "autoapprove": "false"
   }
