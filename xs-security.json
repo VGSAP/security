@@ -1,5 +1,5 @@
 {
-  "xsappname":"securityDemo",
+  "xsappname": "securityDemo",
   "scopes": [
     {
       "name": "$XSAPPNAME.Display",
@@ -8,6 +8,14 @@
     {
       "name": "$XSAPPNAME.Edit",
       "description": "Able to edit Salaries data"
+    },
+    {
+      "name": "$XSAPPNAME.Viewer",
+      "description": "Viewer"
+    },
+    {
+      "name": "$XSAPPNAME.HRAdmin",
+      "description": "HRAdmin"
     }
   ],
   "attributes": [],
@@ -15,12 +23,16 @@
     {
       "name": "Viewer",
       "description": "Able to read data",
-      "scope-references": ["$XSAPPNAME.Display"]
+      "scope-references": [
+        "$XSAPPNAME.Display"
+      ]
     },
     {
       "name": "HRAdmin",
       "description": "HRAdmin able to edit Salaries data",
-      "scope-references": ["$XSAPPNAME.Edit"]
+      "scope-references": [
+        "$XSAPPNAME.Edit"
+      ]
     }
   ],
   "authorities": [

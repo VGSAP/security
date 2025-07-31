@@ -1,8 +1,8 @@
 using { uniq as db } from '../db/schema';
 //@(requires: 'authenticated-user')
-service HRService 
+service HRService @(requires: 'authenticated-user')
 {
-  @readonly entity Employees as projection on db.Employees;
+  entity Employees as projection on db.Employees;
 
   entity Salaries @(restrict: [
       { grant:'READ', to:'Viewer'},
