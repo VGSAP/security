@@ -2,20 +2,12 @@
   "xsappname": "securityDemo",
   "scopes": [
     {
-      "name": "$XSAPPNAME.Display",
+      "name": "$XSAPPNAME.Viewer",
       "description": "Able to see data"
     },
     {
-      "name": "$XSAPPNAME.Edit",
-      "description": "Able to edit Salaries data"
-    },
-    {
-      "name": "$XSAPPNAME.Viewer",
-      "description": "Viewer"
-    },
-    {
       "name": "$XSAPPNAME.HRAdmin",
-      "description": "HRAdmin"
+      "description": "Able to edit Salaries data"
     }
   ],
   "attributes": [],
@@ -24,14 +16,15 @@
       "name": "Viewer",
       "description": "Able to read data",
       "scope-references": [
-        "$XSAPPNAME.Display"
+        "$XSAPPNAME.Viewer"
       ]
     },
     {
       "name": "HRAdmin",
       "description": "HRAdmin able to edit Salaries data",
       "scope-references": [
-        "$XSAPPNAME.Edit"
+        "$XSAPPNAME.Viewer",
+        "$XSAPPNAME.HRAdmin"
       ]
     }
   ],
@@ -43,7 +36,8 @@
     "refresh-token-validity": 1800,
     "redirect-uris": [
       "https://api.cf.us10-001.hana.ondemand.com",
-      "https://securityDemo.cfapps.us10-001.hana.ondemand.com"
+      "https://securityDemo.cfapps.us10-001.hana.ondemand.com",
+      "https://dd7c781ctrial-dev-securitydemo.cfapps.us10-001.hana.ondemand.com/login/callback"
     ],
     "autoapprove": "false"
   }

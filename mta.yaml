@@ -25,6 +25,7 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: securityDemo-auth
+      - name: securityDemo-db
 
   - name: securityDemo
     type: approuter.nodejs
@@ -47,6 +48,14 @@ modules:
           app-protocol: ${protocol}
           app-uri: ${default-uri}
 
+  - name: securityDemo-db-deployer
+    type: hdb
+    path: gen/db
+    parameters:
+      buildpack: nodejs_buildpack
+    requires:
+      - name: securityDemo-db
+
 resources:
   - name: securityDemo-auth
     type: org.cloudfoundry.managed-service
@@ -62,3 +71,8 @@ resources:
             - https://*~{app-api/app-uri}/**
     requires:
       - name: app-api
+  - name: securityDemo-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
