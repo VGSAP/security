@@ -36,8 +36,7 @@
     "refresh-token-validity": 1800,
     "redirect-uris": [
       "https://api.cf.us10-001.hana.ondemand.com",
-      "https://securityDemo.cfapps.us10-001.hana.ondemand.com",
-      "https://dd7c781ctrial-dev-securitydemo.cfapps.us10-001.hana.ondemand.com/login/callback"
+      "https://securityDemo.cfapps.us10-001.hana.ondemand.com"
     ],
     "autoapprove": "false"
   }

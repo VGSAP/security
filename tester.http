@@ -11,6 +11,7 @@ Authorization: Basic vishal:
 
 ###
 POST http://localhost:4004/odata/v4/hr/Employees
+Authorization: Basic vishal:
 Content-Type: application/json
 
 {
